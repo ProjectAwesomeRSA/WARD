@@ -12,7 +12,7 @@ export class CharacterComponent implements OnInit {
     familyName = 'Thryis';
     title = 'Peasant';
     influance = 0;
-    might = 0;
+    might = 1;
     fame = 0;
     reputation = 'Neutral';
     race = 'Vampire';
