@@ -11,6 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { Routes, RouterModule } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './modal/modal.component';
+import { ModalLoginComponent } from './modal-login/modal-login.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {path: 'character', component: CharacterComponent },
@@ -24,7 +27,10 @@ const appRoutes: Routes = [
     AssetManagerComponent,
     AssetItemComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModalComponent,
+    ModalLoginComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +39,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalLoginComponent
+  ]
 })
 export class AppModule { }

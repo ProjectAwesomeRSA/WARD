@@ -1,30 +1,30 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="/">
-    War-torn Dynasties
-  </a>
-
-  <button class="navbar-toggler" type="button"
-          (click)="toggleNavbar()">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse"
-        [ngClass]="{ 'show': navbarOpen }">
-    <ul class="navbar-nav mr-auto">
-      <li *ngIf="1 === 1" class="nav-item">
-        <a class="nav-link" [routerLink]="['/character']" routerLinkActive="router-link-active" >Character</a>
-      </li>
-
-      <li *ngIf="1 === 1" class="nav-item">
-        <a class="nav-link" [routerLink]="['/assets']" routerLinkActive="router-link-active" >Assets</a>
-      </li>
-    </ul>
-
-    <ul class="navbar-nav ml-auto">
-      <li *ngIf="1 === 1" class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+    <a class="navbar-brand" routerLink="/">
+      War-torn Dynasties
+    </a>
+  
+    <button class="navbar-toggler" type="button"
+            (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  
+    <div class="collapse navbar-collapse"
+          [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <li *ngIf="1 === 1" class="nav-item">
+          <a class="nav-link" [routerLink]="['/character']" routerLinkActive="router-link-active" >Character</a>
         </li>
-    </ul>
-  </div>
-</nav>
+  
+        <li *ngIf="1 === 1" class="nav-item">
+          <a class="nav-link" [routerLink]="['/assets']" routerLinkActive="router-link-active" >Assets</a>
+        </li>
+      </ul>
+  
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="1 === 1" class="nav-item">
+          <a class="nav-link login-link" (click)="open()">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

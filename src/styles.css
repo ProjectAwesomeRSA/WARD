@@ -6,3 +6,36 @@ body {
 h1, h2, h3, h4, h5, h6, p {
     color: white;
 }
+
+.form-control, .form-control:focus{
+    background-color : #252525;
+    border-color: #BBB;
+    color: #BBB;
+}
+
+
+/* This is where the modal styling starts*/
+.modal-content {
+    background-color: #455059!important;
+}
+
+.modal-content {
+    border-style: none;
+}
+
+.close {
+    color: white;
+}
+
+.close:focus {
+    outline-style: none;
+}
+
+.modal-footer {
+    border-top: 1px solid #404045;
+}
+
+.modal-header {
+    border-bottom: 1px solid #404045;
+}
+/* This is where the modal styling ends*/
