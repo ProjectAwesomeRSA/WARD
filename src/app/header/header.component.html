@@ -9,8 +9,7 @@
     </button>
   
   
-    <div class="collapse navbar-collapse"
-          [ngClass]="{ 'show': navbarOpen }">
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
       <ul class="navbar-nav mr-auto">
         <li *ngIf="1 === 1" class="nav-item">
           <a class="nav-link" [routerLink]="['/character']" routerLinkActive="router-link-active" >Character</a>
@@ -23,7 +22,7 @@
   
       <ul class="navbar-nav ml-auto">
         <li *ngIf="1 === 1" class="nav-item">
-          <a class="nav-link login-link" (click)="open()">Login</a>
+          <a class="nav-link login-link" (click)="open()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
         </li>
       </ul>
     </div>
