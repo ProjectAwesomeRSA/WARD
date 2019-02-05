@@ -14,6 +14,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ModalRegisterComponent } from './modal-register/modal-register.component';
 
 const appRoutes: Routes = [
   {path: 'character', component: CharacterComponent },
@@ -30,7 +32,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     ModalComponent,
     ModalLoginComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    ModalRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    ModalLoginComponent
+    ModalLoginComponent,
+    ModalRegisterComponent
   ]
 })
 export class AppModule { }
