@@ -16,6 +16,10 @@ import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ModalRegisterComponent } from './modal-register/modal-register.component';
+import { AuthService } from './_services/auth.service';
+import { GetLoginStatusService } from './_services/getLoginStatus.service';
+import { GetCharacterService } from './_services/getCharacter.service';
+import { GetOrdinalNumberService } from './_services/getOrdinalNumber.service';
 
 const appRoutes: Routes = [
   {path: 'character', component: CharacterComponent },
@@ -43,7 +47,12 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    GetLoginStatusService,
+    GetCharacterService,
+    GetOrdinalNumberService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     ModalLoginComponent,
