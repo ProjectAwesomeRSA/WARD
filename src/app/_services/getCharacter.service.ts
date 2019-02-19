@@ -8,24 +8,18 @@ import { GetOrdinalNumberService } from './getOrdinalNumber.service';
 export class GetCharacterService {
 
   name: string;
-
   familyName: string;
-
   title: string;
-
   influance: number;
-
   might: number;
-
   fame: number;
-
   reputation: string;
-
   race: string;
-
   ordinalGeneration: string;
+  birthDate: string;
+  age: number;
 
-  charater: any = null;
+  character: any = null;
   tempCharacterValue = 1;
 
   constructor(private http: HttpClient,
@@ -33,7 +27,7 @@ export class GetCharacterService {
 
   getCharacterInfo() {
     this.http.get('http://localhost:5000/api/characters/' + this.tempCharacterValue.toString()).subscribe(response => {
-      this.charater = response;
+      this.character = response;
       this.updateCharacter();
     }, error => {
       console.log(error);
@@ -41,24 +35,18 @@ export class GetCharacterService {
   }
 
   updateCharacter() {
-    if (this.charater != null) {
-      this.name = this.charater.name;
-
-      this.familyName = this.charater.familyName;
-
-      this.title = this.charater.title;
-
-      this.influance = this.charater.influance;
-
-      this.might = this.charater.might;
-
-      this.fame = this.charater.fame;
-
-      this.reputation = this.charater.reputation;
-
-      this.race = this.charater.race;
-
-      this.ordinalGeneration = this.getOrdinalNumber.convert(this.charater.generation);
+    if (this.character != null) {
+      this.name = this.character.name;
+      this.familyName = this.character.familyName;
+      this.title = this.character.title;
+      this.influance = this.character.influance;
+      this.might = this.character.might;
+      this.fame = this.character.fame;
+      this.reputation = this.character.reputation;
+      this.race = this.character.race;
+      this.ordinalGeneration = this.getOrdinalNumber.convert(this.character.generation);
+      this.birthDate = this.character.birthDate;
+      this.age = this.character.age;
     }
   }
 }

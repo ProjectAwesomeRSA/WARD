@@ -1,23 +1,28 @@
 <form #registerForm="ngForm" (ngSubmit)="register()">
   <p>Register your details:</p>
-  <input type="email" placeholder="Email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="username" [(ngModel)]="model.username" class="form-control" #email="ngModel">
-  <span class="help-block text-danger" *ngIf="!email.valid && email.touched">Please enter a valid Email</span>
+  <input type="email" placeholder="Email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email" [(ngModel)]="model.username" class="form-control" #username="ngModel">
+  <span class="help-block text-danger" *ngIf="username.invalid && (username.dirty || username.touched)">Valid Email is required</span>
   
   <br><br>
   
-  <div ngModelGroup="passwords" #passwords="ngModelGroup" appCheckPassword>
-    <input type="password" placeholder="Create Password" required minlength="8" maxlength="16" name="password" [(ngModel)]="model.password" class="form-control" #password="ngModel">
-    <span class="help-block text-danger" *ngIf="!password.valid && password.touched">Please enter a valid password</span>
-    
-    <br><br>
-    
-    <input type="password" placeholder="Confirm Password" required validateEqual="password" minlength="8" maxlength="16" name="password_confirm" [(ngModel)]="model.password_confirm" class="form-control" #confirmPassword="ngModel">
-    <span class="help-block text-danger" *ngIf="!confirmPassword.valid && confirmPassword.touched">Please enter a valid password</span>
-  </div>
+  <input type="password" placeholder="Password" required minlength="8" maxlength="16" name="password" [(ngModel)]="model.password" class="form-control" #password="ngModel">
+  <span class="help-block text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+    <span *ngIf="password.errors['required']">Password is required</span>
+    <span *ngIf="password.errors['minlength']">Password must have a length between 8 and 16 characters</span>
+  </span>
+  
+  <br><br>
+  
+  <input type="password" placeholder="Password Confirm" required minlength="8" maxlength="16" validateEqual="password" name="confirmPassword" ngModel class="form-control" #confirmPassword="ngModel" appCompareValidator="password">
+  <span class="help-block text-danger" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+    <span *ngIf="confirmPassword.errors['required']">Password confirm is required</span>
+    <span *ngIf="!confirmPassword.errors['required'] && confirmPassword.errors['appCompareValidator']">Password confirm does not match</span>
+  </span>
+
   
   <br><br>
   
   <div class="text-center">
-    <button [disabled]="!registerForm.valid" type="submit" class="btn btn-outline-light">Register</button>
+    <button [disabled]="registerForm.invalid" type="submit" class="btn btn-outline-light">Register</button>
   </div>
 </form>

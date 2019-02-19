@@ -41,7 +41,7 @@ input::placeholder {
 }
 
 a {
-    color: orange;
+    color: lightseagreen;
 }
 
 a:hover {
@@ -52,7 +52,7 @@ a:hover {
 
 /* This is where the modal styling starts*/
 .modal-content {
-    background-color: #455059;
+    background-color: #354049;
 }
 
 .modal-content {

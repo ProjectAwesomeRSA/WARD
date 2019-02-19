@@ -1,14 +1,14 @@
 <form #loginForm="ngForm" (ngSubmit)="login()">
   <p>Enter your login details:</p>
-  <input type="email" placeholder="Email" name="username" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" [(ngModel)]="model.username" #email="ngModel">
-  <span class="help-block text-danger" *ngIf="!email.valid && email.touched">Please enter a valid Email</span>
+  <input type="email" placeholder="Email" name="username" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" [(ngModel)]="model.username" #username="ngModel">
+  <span class="help-block text-danger" *ngIf="username.invalid && username.touched">Valid Email is required</span>
   <br><br>
   <input type="password" placeholder="Password" name="password" required minlength="8" maxlength="16" class="form-control" [(ngModel)]="model.password" #password="ngModel">
-  <span class="help-block text-danger" *ngIf="!password.valid && password.touched">Please enter a valid password</span>
+  <span class="help-block text-danger" *ngIf="password.invalid && password.touched">Valid password is required</span>
   <br><br>
   <a href="#">Forgot password?</a>
   <div class="text-center">
-    <button  [disabled]="!loginForm.valid" type="submit" class="btn btn-outline-light">Login</button>
+    <button  [disabled]="loginForm.invalid" type="submit" class="btn btn-outline-light">Login</button>
   </div>
 </form>
  

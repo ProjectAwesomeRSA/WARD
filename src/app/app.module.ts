@@ -10,7 +10,7 @@ import { AssetItemComponent } from './asset-item/asset-item.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { Routes, RouterModule } from '@angular/router';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +22,8 @@ import { GetCharacterService } from './_services/getCharacter.service';
 import { GetOrdinalNumberService } from './_services/getOrdinalNumber.service';
 import { HomeComponent } from './home/home.component';
 import { LoginService } from './_services/login.service';
+import { CompareValidatorDirective } from './_directive/compare-validator.directive';
+import { GetWorldFactorsService } from './_services/getWorldFactors.service';
 
 const appRoutes: Routes = [
   {path: 'character', component: CharacterComponent },
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     ModalRegisterComponent,
-    HomeComponent
+    HomeComponent,
+    CompareValidatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ const appRoutes: Routes = [
     GetLoginStatusService,
     GetCharacterService,
     GetOrdinalNumberService,
-    LoginService
+    LoginService,
+    GetWorldFactorsService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
