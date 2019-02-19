@@ -20,10 +20,13 @@ import { AuthService } from './_services/auth.service';
 import { GetLoginStatusService } from './_services/getLoginStatus.service';
 import { GetCharacterService } from './_services/getCharacter.service';
 import { GetOrdinalNumberService } from './_services/getOrdinalNumber.service';
+import { HomeComponent } from './home/home.component';
+import { LoginService } from './_services/login.service';
 
 const appRoutes: Routes = [
   {path: 'character', component: CharacterComponent },
-  {path: 'assets', component: AssetManagerComponent }
+  {path: 'assets', component: AssetManagerComponent },
+  {path: 'home', component: HomeComponent }
 ];
 
 @NgModule({
@@ -38,7 +41,8 @@ const appRoutes: Routes = [
     ModalLoginComponent,
     LoginComponent,
     RegisterComponent,
-    ModalRegisterComponent
+    ModalRegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,8 @@ const appRoutes: Routes = [
     AuthService,
     GetLoginStatusService,
     GetCharacterService,
-    GetOrdinalNumberService
+    GetOrdinalNumberService,
+    LoginService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

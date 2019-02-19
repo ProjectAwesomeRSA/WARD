@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="/">
+  <a class="navbar-brand" routerLink="/home" routerLinkActive="router-link-active">
     War-torn Dynasties
   </a>
 
@@ -35,7 +35,7 @@
 
       <ul class="navbar-nav">
         <li *ngIf="getLoginStatus.loggedIn()" class="nav-item">
-          <a class="nav-link login-link" (click)="logout()" [routerLink]="['/']" routerLinkActive="router-link-active"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+          <a class="nav-link login-link" (click)="logout()" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
         </li>
       </ul>
     </span>

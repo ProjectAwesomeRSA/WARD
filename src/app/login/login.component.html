@@ -1,9 +1,11 @@
 <form #loginForm="ngForm" (ngSubmit)="login()">
   <p>Enter your login details:</p>
-  <input type="email" placeholder="Email" name="username" required class="form-control" [(ngModel)]="model.username">
-  <br>
-  <input type="password" placeholder="Password" name="password" required class="form-control" [(ngModel)]="model.password">
-  <br>
+  <input type="email" placeholder="Email" name="username" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" [(ngModel)]="model.username" #email="ngModel">
+  <span class="help-block text-danger" *ngIf="!email.valid && email.touched">Please enter a valid Email</span>
+  <br><br>
+  <input type="password" placeholder="Password" name="password" required minlength="8" maxlength="16" class="form-control" [(ngModel)]="model.password" #password="ngModel">
+  <span class="help-block text-danger" *ngIf="!password.valid && password.touched">Please enter a valid password</span>
+  <br><br>
   <a href="#">Forgot password?</a>
   <div class="text-center">
     <button  [disabled]="!loginForm.valid" type="submit" class="btn btn-outline-light">Login</button>

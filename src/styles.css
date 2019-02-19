@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.help-block {
+    font-size: 0.8em;
+}
+
+input.ng-invalid.ng-touched {
+    border-bottom: 1px solid red!important;
+}
+
 body {
     background-color: #455059;
 }
@@ -7,10 +15,29 @@ h1, h2, h3, h4, h5, h6, p {
     color: white;
 }
 
-.form-control, .form-control:focus{
-    background-color : #252525;
-    border-color: #BBB;
-    color: #BBB;
+input, .input:focus{
+    background-color : inherit!important;
+    color: white!important;
+    border-color: white!important;
+    border-style: dotted!important; 
+    border-top: none!important;
+    border-left: none!important;
+    border-right: none!important;
+    border-radius: 0%!important;
+}
+
+input:focus {
+    border-style: solid!important; 
+    border-top: none!important;
+    border-left: none!important;
+    border-right: none!important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+input::placeholder { 
+    color: #999!important; 
 }
 
 a {
@@ -25,7 +52,7 @@ a:hover {
 
 /* This is where the modal styling starts*/
 .modal-content {
-    background-color: #455059!important;
+    background-color: #455059;
 }
 
 .modal-content {

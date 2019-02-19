@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../_services/auth.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from '../_services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +10,15 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class LoginComponent implements OnInit {
   model: any = {};
 
-  constructor(private authService: AuthService, public activeModal: NgbActiveModal) { }
+  constructor(private activeModal: NgbActiveModal,
+              private loginService: LoginService) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.authService.login(this.model).subscribe(next => {
-      this.activeModal.close('Close click');
-      console.log('Logged in successfully');
-    }, error => {
-      console.log('Failed to login');
-    });
+    this.loginService.login(this.model);
+    this.activeModal.close('Close click');
   }
 
 }
