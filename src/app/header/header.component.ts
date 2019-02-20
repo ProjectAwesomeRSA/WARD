@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
 import { ModalRegisterComponent } from '../modal-register/modal-register.component';
-import { GetLoginStatusService } from '../_services/getLoginStatus.service';
 import { GetCharacterService } from '../_services/getCharacter.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor(private modalService: NgbModal,
-              protected getLoginStatus: GetLoginStatusService,
-              protected getCharacter: GetCharacterService) {}
+              protected getCharacter: GetCharacterService,
+              private authService: AuthService) {}
 
   openLogin() {
     const modalRef = this.modalService.open(ModalLoginComponent);
@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.removeItem('token');
     console.log('Logged out');
+  }
+
+  getLoginStatus() {
+    return this.authService.loggedIn();
   }
 
   ngOnInit() {

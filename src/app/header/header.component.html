@@ -11,30 +11,30 @@
 
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
-      <li *ngIf="getLoginStatus.loggedIn()" class="nav-item">
+      <li *ngIf="getLoginStatus()" class="nav-item">
         <a class="nav-link" [routerLink]="['/character']" routerLinkActive="router-link-active" (click)="getCharacter.getCharacterInfo()" >Character</a>
       </li>
 
-      <li *ngIf="getLoginStatus.loggedIn()" class="nav-item">
+      <li *ngIf="getLoginStatus()" class="nav-item">
         <a class="nav-link" [routerLink]="['/assets']" routerLinkActive="router-link-active" >Assets</a>
       </li>
     </ul>
     
     <span class="navbar-nav ml-auto">
       <ul class="navbar-nav">
-        <li *ngIf="!getLoginStatus.loggedIn()" class="nav-item">
+        <li *ngIf="!getLoginStatus()" class="nav-item">
           <a class="nav-link login-link" (click)="openRegister()"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
         </li>
       </ul>
 
       <ul class="navbar-nav">
-        <li *ngIf="!getLoginStatus.loggedIn()" class="nav-item">
+        <li *ngIf="!getLoginStatus()" class="nav-item">
           <a class="nav-link login-link" (click)="openLogin()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
         </li>
       </ul>
 
       <ul class="navbar-nav">
-        <li *ngIf="getLoginStatus.loggedIn()" class="nav-item">
+        <li *ngIf="getLoginStatus()" class="nav-item">
           <a class="nav-link login-link" (click)="logout()" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
         </li>
       </ul>
