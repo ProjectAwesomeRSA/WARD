@@ -1,3 +1,26 @@
 .login-link:hover {
     cursor: pointer;
 }
+
+.logo {
+    max-width: 300px!important;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    padding: 0px!important;
+}
+
+.navbar-brand {
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.nav-item {
+    padding-left: 30px!important;
+}
+
+nav {
+    box-shadow: 0 6px 20px #000;
+}

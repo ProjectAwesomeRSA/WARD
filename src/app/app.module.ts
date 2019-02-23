@@ -25,6 +25,8 @@ import { CompareValidatorDirective } from './_directives/compare-validator.direc
 import { GetWorldFactorsService } from './_services/getWorldFactors.service';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
+import { ActionsComponent } from './actions/actions.component';
+import { MarketComponent } from './market/market.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { AuthGuard } from './_guards/auth.guard';
     ModalRegisterComponent,
     HomeComponent,
     CompareValidatorDirective,
+    ActionsComponent,
+    MarketComponent,
   ],
   imports: [
     BrowserModule,

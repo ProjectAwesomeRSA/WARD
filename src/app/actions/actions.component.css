@@ -1,0 +1,24 @@
+.progress {
+    margin-bottom: 20px;
+    background-color: #222    
+}
+
+.progress-bar, .progress {
+    height: 10px;
+    border-radius: 20px;
+}
+
+.progress-bar {
+    position: relative;
+    top: -30px;
+}
+
+.progress-bar.bg-danger {
+    box-shadow: 0 0 20px pink;
+    
+    
+}
+
+.progress-bar.bg-info {
+    box-shadow: 0 0 20px lightblue;
+}

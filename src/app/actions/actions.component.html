@@ -1,0 +1,41 @@
+<div class="boxing">
+  <div class="row">
+    <div class="col-sm-6">
+      <p>HP:</p>
+    </div>
+      
+    <div class="col-sm-6">
+      <p>Stamina:</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="progress"></div>
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" [style.width.%]="70"></div>
+    </div>
+    
+    <div class="col-sm-6">
+      <div class="progress"></div>
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" [style.width.%]="100"></div>
+    </div>
+  </div>
+  
+  <ngb-tabset>
+      <ngb-tab title="Quests">
+        <ng-template ngbTabContent>
+          <p></p>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Tasks">
+        <ng-template ngbTabContent>
+          <p></p>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Duels">
+        <ng-template ngbTabContent>
+          <p></p>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+</div>
