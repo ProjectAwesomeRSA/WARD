@@ -6,14 +6,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GetActionsService {
 
-  taskActions: any;
+  tasksResult: any;
+  questsResult: any;
   doTaskResult: any;
 
   constructor(private http: HttpClient) { }
 
   getTasks() {
     this.http.get('http://localhost:5000/api/actions/tasks').subscribe(response => {
-      this.taskActions = response;
+      this.tasksResult = response;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getQuests() {
+    this.http.get('http://localhost:5000/api/actions/quests').subscribe(response => {
+      this.questsResult = response;
     }, error => {
       console.log(error);
     });
@@ -21,6 +30,14 @@ export class GetActionsService {
 
   doTask(taskId: number) {
     this.http.get('http://localhost:5000/api/actions/tasks/' + taskId.toString()).subscribe(response => {
+      this.doTaskResult = response;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  doQuest(taskId: number) {
+    this.http.get('http://localhost:5000/api/actions/quests/' + taskId.toString()).subscribe(response => {
       this.doTaskResult = response;
     }, error => {
       console.log(error);

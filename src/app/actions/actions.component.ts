@@ -8,18 +8,29 @@ import { GetActionsService } from '../_services/getActions.service';
 })
 export class ActionsComponent implements OnInit {
   actionsTasks: any;
+  actionsQuests: any;
   constructor(private getActionsService: GetActionsService) { }
 
   ngOnInit() {
     this.getTasks();
+    this.getQuests();
   }
 
   getTasks() {
     this.getActionsService.getTasks();
-    this.actionsTasks = this.getActionsService.taskActions;
+    this.actionsTasks = this.getActionsService.tasksResult;
+  }
+
+  getQuests() {
+    this.getActionsService.getQuests();
+    this.actionsQuests = this.getActionsService.questsResult;
   }
 
   doTask(taskId: number) {
     this.getActionsService.doTask(taskId);
+  }
+
+  doQuest(questId: number) {
+    this.getActionsService.doQuest(questId);
   }
 }
