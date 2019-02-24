@@ -27,6 +27,7 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { ActionsComponent } from './actions/actions.component';
 import { MarketComponent } from './market/market.component';
+import { GetActionsService } from './_services/getActions.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { MarketComponent } from './market/market.component';
     GetOrdinalNumberService,
     LoginService,
     GetWorldFactorsService,
-    AuthGuard
+    AuthGuard,
+    GetActionsService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [

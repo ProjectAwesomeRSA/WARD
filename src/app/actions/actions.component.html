@@ -4,6 +4,7 @@
       <div>
         <p>Stamina:</p>
       </div>
+
       <div class="progress"></div>
       <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" [style.width.%]="70"></div>
     </div>
@@ -19,20 +20,68 @@
   </div>
   
   <ngb-tabset>
-      <ngb-tab title="Quests">
-        <ng-template ngbTabContent>
-          <p></p>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Tasks">
-        <ng-template ngbTabContent>
-          <p></p>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Duels">
-        <ng-template ngbTabContent>
-          <p></p>
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+          <div (click)="getTasks()">Quests</div>
+      </ng-template>
+
+      <ng-template ngbTabContent>
+        <br>
+        <p>Quests assist in finding relics and other rare objects, this is however very time consuming to say the least...</p>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+          <div (click)="getTasks()">Tasks</div>
+      </ng-template>
+
+      <ng-template ngbTabContent>
+        <br>
+        <p>Tasks are good for gathering resources and materials.</p>
+
+        <div class="action-card row" *ngFor="let actions of this.actionsTasks">
+          <div class="col-sm-3">
+              <div class="action-img"><img src="assets/images/{{actions.taskTitle}}.jpg"></div>
+          </div>
+
+          <div class="col-sm-9">
+            <div class="row">
+              <div class="col-sm-12">
+                <h6> {{actions.taskTitle}} </h6>
+              </div>
+
+              <div class="col-sm-12">
+                <p> {{actions.taskDescription}} </p>
+              </div>
+
+              <div class="col-sm-4">
+                <p>Payment: {{actions.monetaryReward}} </p>
+              </div>
+              <div class="col-sm-4">
+                <p>Exp: {{actions.expGain}} </p>
+              </div>
+              <div class="col-sm-4">
+                <p>Energy: -{{actions.staminaCost}} </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Duels">
+      <ng-template ngbTabContent>
+        <br>
+        <p>How do you match up in a one on one againts your closest rivals?</p>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Raids">
+      <ng-template ngbTabContent>
+        <br>
+        <p>High risk versus high reward. Raid for bountiful riches, or cripple your army while trying.</p>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
 </div>

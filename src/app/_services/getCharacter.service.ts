@@ -19,7 +19,7 @@ export class GetCharacterService {
   birthDate: string;
   age: number;
 
-  character: any = null;
+  character: any;
   tempCharacterValue = 1;
 
   constructor(private http: HttpClient,
@@ -35,7 +35,7 @@ export class GetCharacterService {
   }
 
   updateCharacter() {
-    if (this.character != null) {
+    if (this.character !== undefined) {
       this.name = this.character.name;
       this.familyName = this.character.familyName;
       this.title = this.character.title;

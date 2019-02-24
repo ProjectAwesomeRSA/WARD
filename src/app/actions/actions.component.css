@@ -22,3 +22,32 @@
 .progress-bar.bg-info {
     box-shadow: 0 0 20px lightblue;
 }
+
+.action-card {
+    border-radius: 10px;
+    margin: 10px 0;
+    padding-top: 15px;
+    background-color: #111;
+    border: 2px solid #444;
+}
+
+.action-card:hover {
+    box-shadow: 0 0 30px lightseagreen;
+    cursor: pointer;
+}
+
+.action-img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #999;
+    margin-bottom: 15px;
+}
+
+img {
+    display: block;
+    max-width: 200%;
+    max-height: 200%;
+    object-fit: cover;
+}

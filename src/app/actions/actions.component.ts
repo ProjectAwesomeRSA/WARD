@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetActionsService } from '../_services/getActions.service';
 
 @Component({
   selector: 'app-actions',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actions.component.css']
 })
 export class ActionsComponent implements OnInit {
-
-  constructor() { }
+  actionsTasks: any;
+  constructor(private getActionsService: GetActionsService) { }
 
   ngOnInit() {
+    this.getActionsService.getTasks();
+    this.actionsTasks = this.getActionsService.taskActions;
   }
 
+  getTasks() {
+    this.getActionsService.getTasks();
+    this.actionsTasks = this.getActionsService.taskActions;
+  }
 }
