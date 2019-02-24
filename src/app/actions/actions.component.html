@@ -28,6 +28,34 @@
       <ng-template ngbTabContent>
         <br>
         <p>Quests assist in finding relics and other rare objects, this is however very time consuming to say the least...</p>
+
+        <div class="action-card row" *ngFor="let actions of this.actionsTasks">
+          <div class="col-sm-3">
+              <div class="action-img"><img src="assets/images/{{actions.taskTitle}}.jpg"></div>
+          </div>
+
+          <div class="col-sm-9">
+            <div class="row">
+              <div class="col-sm-12">
+                <h6> {{actions.taskTitle}} </h6>
+              </div>
+
+              <div class="col-sm-12">
+                <p> {{actions.taskDescription}} </p>
+              </div>
+
+              <div class="col-sm-4">
+                <p>Payment: {{actions.monetaryReward}} </p>
+              </div>
+              <div class="col-sm-4">
+                <p>Exp: {{actions.expGain}} </p>
+              </div>
+              <div class="col-sm-4">
+                <p>Energy: -{{actions.staminaCost}} </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </ng-template>
     </ngb-tab>
 
@@ -40,7 +68,7 @@
         <br>
         <p>Tasks are good for gathering resources and materials.</p>
 
-        <div class="action-card row" *ngFor="let actions of this.actionsTasks">
+        <div class="action-card row" *ngFor="let actions of this.actionsTasks" (click)="doTask(actions.id)">
           <div class="col-sm-3">
               <div class="action-img"><img src="assets/images/{{actions.taskTitle}}.jpg"></div>
           </div>

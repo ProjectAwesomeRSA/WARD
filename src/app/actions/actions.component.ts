@@ -18,4 +18,8 @@ export class ActionsComponent implements OnInit {
     this.getActionsService.getTasks();
     this.actionsTasks = this.getActionsService.taskActions;
   }
+
+  doTask(taskId: number) {
+    this.getActionsService.doTask(taskId);
+  }
 }

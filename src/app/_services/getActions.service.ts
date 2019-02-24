@@ -7,12 +7,21 @@ import { HttpClient } from '@angular/common/http';
 export class GetActionsService {
 
   taskActions: any;
+  doTaskResult: any;
 
   constructor(private http: HttpClient) { }
 
   getTasks() {
     this.http.get('http://localhost:5000/api/actions/tasks').subscribe(response => {
       this.taskActions = response;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  doTask(taskId: number) {
+    this.http.get('http://localhost:5000/api/actions/tasks/' + taskId.toString()).subscribe(response => {
+      this.doTaskResult = response;
     }, error => {
       console.log(error);
     });
