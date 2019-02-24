@@ -11,8 +11,7 @@ export class ActionsComponent implements OnInit {
   constructor(private getActionsService: GetActionsService) { }
 
   ngOnInit() {
-    this.getActionsService.getTasks();
-    this.actionsTasks = this.getActionsService.taskActions;
+    this.getTasks();
   }
 
   getTasks() {
