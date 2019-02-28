@@ -29,6 +29,8 @@ import { AuthGuard } from './_guards/auth.guard';
 import { ActionsComponent } from './actions/actions.component';
 import { MarketComponent } from './market/market.component';
 import { GetActionsService } from './_services/getActions.service';
+import { QuestActionResolver } from './_resolvers/questAction.resolver';
+import { TaskActionResolver } from './_resolvers/taskAction.resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -74,6 +76,8 @@ export function tokenGetter() {
     GetWorldFactorsService,
     AuthGuard,
     GetActionsService,
+    QuestActionResolver,
+    TaskActionResolver
   ],
   bootstrap: [AppComponent],
   entryComponents: [

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GetOrdinalNumberService } from './getOrdinalNumber.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetCharacterService {
+  baseUrl = environment.apiUrl + 'characters/';
 
   name: string;
   familyName: string;
@@ -20,13 +22,13 @@ export class GetCharacterService {
   age: number;
 
   character: any;
-  tempCharacterValue = 1;
+  tempCharacterValue = 8;
 
   constructor(private http: HttpClient,
               private getOrdinalNumber: GetOrdinalNumberService) { }
 
   getCharacterInfo() {
-    this.http.get('http://localhost:5000/api/characters/' + this.tempCharacterValue.toString()).subscribe(response => {
+    this.http.get(this.baseUrl + 'characters/' + this.tempCharacterValue.toString()).subscribe(response => {
       this.character = response;
       this.updateCharacter();
     }, error => {

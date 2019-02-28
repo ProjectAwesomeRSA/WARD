@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetActionsService } from '../_services/getActions.service';
+import { QuestAction } from '../_models/questAction';
+import { ActivatedRoute } from '@angular/router';
+import { TaskAction } from '../_models/taskAction';
 
 @Component({
   selector: 'app-actions',
@@ -7,23 +10,16 @@ import { GetActionsService } from '../_services/getActions.service';
   styleUrls: ['./actions.component.css']
 })
 export class ActionsComponent implements OnInit {
-  actionsTasks: any;
-  actionsQuests: any;
-  constructor(private getActionsService: GetActionsService) { }
+  taskActions: TaskAction[];
+  questActions: QuestAction[];
+
+  constructor(private getActionsService: GetActionsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getTasks();
-    this.getQuests();
-  }
-
-  getTasks() {
-    this.getActionsService.getTasks();
-    this.actionsTasks = this.getActionsService.tasksResult;
-  }
-
-  getQuests() {
-    this.getActionsService.getQuests();
-    this.actionsQuests = this.getActionsService.questsResult;
+    this.route.data.subscribe(data => {
+      this.questActions = data.questActions;
+      this.taskActions = data.taskActions;
+    });
   }
 
   doTask(taskId: number) {

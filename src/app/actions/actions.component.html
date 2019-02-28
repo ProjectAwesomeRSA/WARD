@@ -22,14 +22,14 @@
   <ngb-tabset>
     <ngb-tab>
       <ng-template ngbTabTitle>
-          <div (click)="getQuests()">Quests</div>
+          <div>Quests</div>
       </ng-template>
 
       <ng-template ngbTabContent>
         <br>
         <p>Quests assist in finding relics and other rare objects, this is however very time consuming to say the least...</p>
 
-        <div class="action-card row" *ngFor="let actions of this.actionsQuests" (click)="doQuest(actions.id)">
+        <div class="action-card row" *ngFor="let actions of this.questActions" (click)="doQuest(actions.id)">
           <div class="col-sm-3">
               <div class="action-img"><img src="assets/images/{{actions.taskTitle}}.jpg"></div>
           </div>
@@ -62,14 +62,14 @@
 
     <ngb-tab>
       <ng-template ngbTabTitle>
-          <div (click)="getTasks()">Tasks</div>
+          <div>Tasks</div>
       </ng-template>
 
       <ng-template ngbTabContent>
         <br>
         <p>Tasks are good for gathering resources and materials.</p>
 
-        <div class="action-card row" *ngFor="let actions of this.actionsTasks" (click)="doTask(actions.id)">
+        <div class="action-card row" *ngFor="let actions of this.taskActions" (click)="doTask(actions.id)">
           <div class="col-sm-3">
               <div class="action-img"><img src="assets/images/{{actions.taskTitle}}.jpg"></div>
           </div>
