@@ -22,6 +22,7 @@ export class GetCharacterService {
   age: number;
 
   character: any;
+  tempCharacterValue = 4;
   tempCharacterValue = 8;
 
   constructor(private http: HttpClient,
