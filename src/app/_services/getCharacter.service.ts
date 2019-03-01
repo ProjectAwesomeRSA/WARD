@@ -22,14 +22,13 @@ export class GetCharacterService {
   age: number;
 
   character: any;
-  tempCharacterValue = 4;
-  tempCharacterValue = 8;
+  tempCharacterValue = 1;
 
   constructor(private http: HttpClient,
               private getOrdinalNumber: GetOrdinalNumberService) { }
 
   getCharacterInfo() {
-    this.http.get(this.baseUrl + 'characters/' + this.tempCharacterValue.toString()).subscribe(response => {
+    this.http.get(this.baseUrl + this.tempCharacterValue.toString()).subscribe(response => {
       this.character = response;
       this.updateCharacter();
     }, error => {
