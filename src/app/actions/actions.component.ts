@@ -23,10 +23,10 @@ export class ActionsComponent implements OnInit {
   }
 
   doTask(taskId: number) {
-    this.getActionsService.doTask(taskId);
+    console.log(this.getActionsService.doTask(taskId));
   }
 
   doQuest(questId: number) {
-    this.getActionsService.doQuest(questId);
+    console.log(this.getActionsService.doQuest(questId));
   }
 }

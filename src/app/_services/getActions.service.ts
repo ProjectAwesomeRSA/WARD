@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -10,8 +10,6 @@ import { TaskAction } from '../_models/taskAction';
 })
 export class GetActionsService {
   baseUrl = environment.apiUrl + 'actions/';
-
-  doTaskResult: any;
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +23,7 @@ export class GetActionsService {
 
   doTask(taskId: number) {
     this.http.get(this.baseUrl + 'tasks/' + taskId.toString()).subscribe(response => {
-      this.doTaskResult = response;
+      return response;
     }, error => {
       console.log(error);
     });
@@ -33,7 +31,7 @@ export class GetActionsService {
 
   doQuest(taskId: number) {
     this.http.get(this.baseUrl + 'quests/' + taskId.toString()).subscribe(response => {
-      this.doTaskResult = response;
+      return response;
     }, error => {
       console.log(error);
     });
